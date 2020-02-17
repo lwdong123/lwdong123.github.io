@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>第四天：spring源码 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="123456789101112131415spring:1.加载配置文件 （BeanDefinitionReader   产生BeanDefinition对象）2.扫描包       （BeanDefinition对象包装成BeanWrapper对象）3.实例化class文件，放入ioc容器   （BeanWrapper缓存到IOC容器）4.依赖注入DI（扫描IOC容器中的实例，给他赋值）5.初始">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第四天：spring源码">
+<meta property="og:url" content="http://yoursite.com/2020/02/17/%E7%AC%AC%E5%9B%9B%E5%A4%A9%EF%BC%9Aspring%E6%BA%90%E7%A0%81/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="123456789101112131415spring:1.加载配置文件 （BeanDefinitionReader   产生BeanDefinition对象）2.扫描包       （BeanDefinition对象包装成BeanWrapper对象）3.实例化class文件，放入ioc容器   （BeanWrapper缓存到IOC容器）4.依赖注入DI（扫描IOC容器中的实例，给他赋值）5.初始">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-17T12:27:59.040Z">
+<meta property="article:modified_time" content="2020-02-17T12:42:54.233Z">
 <meta property="article:author" content="Wen Dail">
 <meta name="twitter:card" content="summary">
   
@@ -150,130 +154,157 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-第四天：spring源码" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      第四天：spring源码
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/17/%E7%AC%AC%E5%9B%9B%E5%A4%A9%EF%BC%9Aspring%E6%BA%90%E7%A0%81/" class="archive-article-date">
+
+        
+        <a href="/2020/02/17/%E7%AC%AC%E5%9B%9B%E5%A4%A9%EF%BC%9Aspring%E6%BA%90%E7%A0%81/" class="archive-article-date">
   	<time datetime="2020-02-17T12:27:59.040Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/%E7%AC%AC%E5%9B%9B%E5%A4%A9%EF%BC%9Aspring%E6%BA%90%E7%A0%81/">第四天：spring源码</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line"><span class="number">1</span>.加载配置文件 （BeanDefinitionReader   产生BeanDefinition对象）</span><br><span class="line"><span class="number">2</span>.扫描包       （BeanDefinition对象包装成BeanWrapper对象）</span><br><span class="line"><span class="number">3</span>.实例化<span class="class"><span class="keyword">class</span>文件，放入<span class="title">ioc</span>容器   （<span class="title">BeanWrapper</span>缓存到<span class="title">IOC</span>容器）</span></span><br><span class="line"><span class="class">4.依赖注入<span class="title">DI</span>（扫描<span class="title">IOC</span>容器中的实例，给他赋值）</span></span><br><span class="line"><span class="class">5.初始化处理器（利用反射机制代理服务） <span class="title">Method</span>.<span class="title">invoke</span>(<span class="title">obj</span>,)</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">springmvc</span> </span></span><br><span class="line"><span class="class">前端控制器--处理器映射器--处理器适配器--视图解析器--视图</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">映射器<span class="title">handlerMapping</span>：前端<span class="title">url</span>和方法一一对应</span></span><br><span class="line"><span class="class">适配器<span class="title">handlerAdapter</span>：前端参数和方法参数动态匹配</span></span><br><span class="line">视图解析器viewResolver:决定要不要把模板引擎渲染模板页面 (jsp,thymlef，FreeMarker)</span><br><span class="line">视图view:渲染页面</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/17/%E7%AC%AC%E5%9B%9B%E5%A4%A9%EF%BC%9Aspring%E6%BA%90%E7%A0%81/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/16/%E7%AC%AC%E4%B8%89%E5%A4%A9%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-02-16T13:20:50.950Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/16/%E7%AC%AC%E4%B8%89%E5%A4%A9%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第三天：排序算法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/16/%E7%AC%AC%E4%B8%89%E5%A4%A9%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">第三天：排序算法</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/15/%E7%AC%AC%E4%BA%8C%E5%A4%A9%EF%BC%9ALinux%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-02-15T10:55:50.593Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/%E7%AC%AC%E4%BA%8C%E5%A4%A9%EF%BC%9ALinux%E5%91%BD%E4%BB%A4/">第二天：Linux命令</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/14/%E7%AC%AC%E4%B8%80%E5%A4%A9%EF%BC%9A%E5%AE%89%E8%A3%85%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-02-14T12:18:21.135Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/14/%E7%AC%AC%E4%B8%80%E5%A4%A9%EF%BC%9A%E5%AE%89%E8%A3%85%E5%8D%9A%E5%AE%A2/">第一天：安装博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -296,8 +327,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
