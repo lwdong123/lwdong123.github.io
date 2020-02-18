@@ -152,6 +152,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-随笔" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/17/%E9%9A%8F%E7%AC%94/">随笔</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/17/%E9%9A%8F%E7%AC%94/" class="archive-article-date">
+  	<time datetime="2020-02-17T12:47:15.338Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hashmap遍历:EntrySet</span><br><span class="line">底层：链表+数组的结构</span><br></pre></td></tr></table></figure>
+
+
+
+<p>一、HashMap底层剖析：</p>
+<p>哈希表（hash table）即散列表</p>
+<p>数据结构的物理存储结构只有两种：顺序存储结构和链式存储结构，而在上面我们提到过，在数组中根据下标查找某个元素，一次定位就可以达到，哈希表利用了这种特性，哈希表的主干就是<strong>数组。</strong> </p>
+<p>查找操作同理，先通过哈希函数计算出实际存储地址，然后从数组中对应地址取出即可。</p>
+<p>哈希冲突的解决方案有多种:开放定址法（发生冲突，继续寻找下一块未被占用的存储地址）</p>
+<p>再散列函数法，链地址法，而HashMap即是采用了链地址法，也就是<strong>数组+链表</strong>的方式，</p>
+<p>HashMap的主干是一个Entry数组。Entry是HashMap的基本组成单元，每一个Entry包含一个key-value键值对。</p>
+<p>Entry是HashMap中的一个静态内部类</p>
+<p>因为是一个Entry数组，所以可以直接增强for循环遍历</p>
+<p>for(Entry&lt;k,v&gt; ele:map.entrySet){</p>
+<p>System.out.println(ele.getKey()+ele.getValue())  }</p>
+<p><strong>HashMap由数组+链表组成的，数组是HashMap的主体，链表则是主要为了解决哈希冲突而存在的</strong> </p>
+<p><img src="file:///C:%5CUsers%5CADMINI~1%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps7B97.tmp.jpg" alt="img"></p>
+<p>地址存储方式：key生成hashcode,通过hash()扰乱运算生成地址，最后indexFor方法生成存储下标。</p>
+<p>4 当需要进行数组扩容，扩容时，需要新建一个长度为之前数组2倍的新的数组，然后将当前的Entry数组中的元素全部传输过去，扩容后的新数组长度为之前的2倍，所以扩容相对来说是个耗资源的操作。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/17/%E9%9A%8F%E7%AC%94/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-第四天：spring源码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
