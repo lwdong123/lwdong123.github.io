@@ -313,7 +313,6 @@
 <p>for(Entry&lt;k,v&gt; ele:map.entrySet){</p>
 <p>System.out.println(ele.getKey()+ele.getValue())  }</p>
 <p><strong>HashMap由数组+链表组成的，数组是HashMap的主体，链表则是主要为了解决哈希冲突而存在的</strong> </p>
-<p><img src="file:///C:%5CUsers%5CADMINI~1%5CAppData%5CLocal%5CTemp%5Cksohtml%5Cwps7B97.tmp.jpg" alt="img"></p>
 <p>地址存储方式：key生成hashcode,通过hash()扰乱运算生成地址，最后indexFor方法生成存储下标。</p>
 <p>4 当需要进行数组扩容，扩容时，需要新建一个长度为之前数组2倍的新的数组，然后将当前的Entry数组中的元素全部传输过去，扩容后的新数组长度为之前的2倍，所以扩容相对来说是个耗资源的操作。</p>
 
@@ -379,7 +378,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line"><span class="number">1</span>.加载配置文件 （BeanDefinitionReader   产生BeanDefinition对象）</span><br><span class="line"><span class="number">2</span>.扫描包       （BeanDefinition对象包装成BeanWrapper对象）</span><br><span class="line"><span class="number">3</span>.实例化<span class="class"><span class="keyword">class</span>文件，放入<span class="title">ioc</span>容器   （<span class="title">BeanWrapper</span>缓存到<span class="title">IOC</span>容器）</span></span><br><span class="line"><span class="class">4.依赖注入<span class="title">DI</span>（扫描<span class="title">IOC</span>容器中的实例，给他赋值）</span></span><br><span class="line"><span class="class">5.初始化处理器（利用反射机制代理服务） <span class="title">Method</span>.<span class="title">invoke</span>(<span class="title">obj</span>,)</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">springmvc</span> </span></span><br><span class="line"><span class="class">前端控制器--处理器映射器--处理器适配器--视图解析器--视图</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">映射器<span class="title">handlerMapping</span>：前端<span class="title">url</span>和方法一一对应</span></span><br><span class="line"><span class="class">适配器<span class="title">handlerAdapter</span>：前端参数和方法参数动态匹配</span></span><br><span class="line">视图解析器viewResolver:决定要不要把模板引擎渲染模板页面 (jsp,thymlef，FreeMarker)</span><br><span class="line">视图view:渲染页面</span><br></pre></td></tr></table></figure>
-
 
       
 
@@ -581,7 +579,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">安装hexo博客的步骤地址：</span><br><span class="line"></span><br><span class="line">https:<span class="comment">//www.cnblogs.com/hxun/p/10939665.html</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">更新命令：hexo clean ---&gt;  hexo g  ---&gt;  hexo d</span><br><span class="line"></span><br><span class="line">主题命令：git clone https:<span class="comment">//github.com/litten/hexo-theme-yilia.git themes/yilia</span></span><br><span class="line"></span><br><span class="line">今天天气很好</span><br></pre></td></tr></table></figure>
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">安装hexo博客的步骤地址：</span><br><span class="line"></span><br><span class="line">https:<span class="comment">//www.cnblogs.com/hxun/p/10939665.html</span></span><br><span class="line"></span><br><span class="line">本地启动命令：hexo server</span><br><span class="line"></span><br><span class="line">更新命令：hexo clean ---&gt;  hexo g  ---&gt;  hexo d</span><br><span class="line"></span><br><span class="line">主题命令：git clone https:<span class="comment">//github.com/litten/hexo-theme-yilia.git themes/yilia</span></span><br><span class="line"></span><br><span class="line">今天天气很好</span><br></pre></td></tr></table></figure>
 
 
       

@@ -16,7 +16,7 @@
 <meta property="og:description" content="123456789101112131415spring:1.加载配置文件 （BeanDefinitionReader   产生BeanDefinition对象）2.扫描包       （BeanDefinition对象包装成BeanWrapper对象）3.实例化class文件，放入ioc容器   （BeanWrapper缓存到IOC容器）4.依赖注入DI（扫描IOC容器中的实例，给他赋值）5.初始">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-17T12:27:59.040Z">
-<meta property="article:modified_time" content="2020-02-17T12:42:54.233Z">
+<meta property="article:modified_time" content="2020-02-20T03:47:30.822Z">
 <meta property="article:author" content="Wen Dail">
 <meta name="twitter:card" content="summary">
   
@@ -175,7 +175,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line"><span class="number">1</span>.加载配置文件 （BeanDefinitionReader   产生BeanDefinition对象）</span><br><span class="line"><span class="number">2</span>.扫描包       （BeanDefinition对象包装成BeanWrapper对象）</span><br><span class="line"><span class="number">3</span>.实例化<span class="class"><span class="keyword">class</span>文件，放入<span class="title">ioc</span>容器   （<span class="title">BeanWrapper</span>缓存到<span class="title">IOC</span>容器）</span></span><br><span class="line"><span class="class">4.依赖注入<span class="title">DI</span>（扫描<span class="title">IOC</span>容器中的实例，给他赋值）</span></span><br><span class="line"><span class="class">5.初始化处理器（利用反射机制代理服务） <span class="title">Method</span>.<span class="title">invoke</span>(<span class="title">obj</span>,)</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">springmvc</span> </span></span><br><span class="line"><span class="class">前端控制器--处理器映射器--处理器适配器--视图解析器--视图</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">映射器<span class="title">handlerMapping</span>：前端<span class="title">url</span>和方法一一对应</span></span><br><span class="line"><span class="class">适配器<span class="title">handlerAdapter</span>：前端参数和方法参数动态匹配</span></span><br><span class="line">视图解析器viewResolver:决定要不要把模板引擎渲染模板页面 (jsp,thymlef，FreeMarker)</span><br><span class="line">视图view:渲染页面</span><br></pre></td></tr></table></figure>
-
 
       
 
