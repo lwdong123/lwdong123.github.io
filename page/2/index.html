@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Wen Dail">
@@ -152,292 +152,149 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-第二天：Linux命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/15/%E7%AC%AC%E4%BA%8C%E5%A4%A9%EF%BC%9ALinux%E5%91%BD%E4%BB%A4/">第二天：Linux命令</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/15/%E7%AC%AC%E4%BA%8C%E5%A4%A9%EF%BC%9ALinux%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2020-02-15T10:55:50.593Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
+</a>
+        
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">直接进入管理员命令：</span><br><span class="line">（ctrl+Alt键+F1-7中的一个）</span><br><span class="line">&#x2F;usr&#x2F;bin&#x2F;sudo -i便获得root权限</span><br><span class="line"></span><br><span class="line">Linux权限不够：sudo su输入密码就行了</span><br><span class="line"></span><br><span class="line">useradd 用户名     （添加用户）</span><br><span class="line">passwd  用户名		（设置密码）</span><br><span class="line">userdel 用户名		（删除用户)</span><br><span class="line"></span><br><span class="line">pwd 			(显示当前目录的路径)</span><br><span class="line">ls				（查看文件 -a -l）</span><br><span class="line">cd 				(~回到根目录   ..回到上一个目录)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir指令用于创建目录</span><br><span class="line">mkdir [选项] 要创建的目录   -p创建多级目录</span><br><span class="line">rmdir 删除空目录</span><br><span class="line">rm -rf 删除非空目录</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">创建文件</span><br><span class="line">touch文件名称 用来创建文件</span><br><span class="line">vim    编辑文件</span><br><span class="line">esc+ :wq!   保存并退出</span><br><span class="line">rm -f  删除文档</span><br><span class="line">复制文件</span><br><span class="line">cp 某某目录下的文件    （-r递归复制整个文件夹）</span><br><span class="line"></span><br><span class="line">转移目录或文件  重命名</span><br><span class="line">mv oldNameFile newNameFile (功能描述：重命名)</span><br><span class="line">mv &#x2F;temp&#x2F;movefile &#x2F;targetFolder (功能描述：移动文件）</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat 查看文件内容</span><br><span class="line">cat hello.txt (-n显示行数)</span><br><span class="line">tail用于输出文件中尾部的内容，默认情况下tail指令显示文件的前10行内容。</span><br><span class="line">tail -n 5 文件 （功能描述：查看文件头5行内容，5可以是任意行数）</span><br><span class="line">history （功能描述：查看已经执行过历史命令）</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">date （功能描述：显示当前时间）</span><br><span class="line">2) date +%Y （功能描述：显示当前年份）</span><br><span class="line">3) date +%m （功能描述：显示当前月份）</span><br><span class="line">4) date +%d （功能描述：显示当前是哪一天）</span><br><span class="line">5) date &quot;+%Y-%m-%d %H:%M:%S&quot;（功能描述：显示年月日时分秒）</span><br><span class="line"></span><br><span class="line">cal 日历</span><br><span class="line">find 查找</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">grep过滤查找</span><br><span class="line"></span><br><span class="line">解压命令：tar zxvf  </span><br><span class="line">         unzip</span><br><span class="line">         gunzip</span><br><span class="line">         </span><br><span class="line">压缩命令：gzip</span><br><span class="line">		zip</span><br><span class="line">		tar zcvf </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">gunzip 文件.gz （解压缩文件命令）</span><br><span class="line">unzip 用于解压的</span><br><span class="line">zip XXX.zip 将要压缩的内容（功能描述：压缩文件和目录的命令）unzip  XXX.zi（功能描述：解压缩文件）</span><br><span class="line">-r递归压缩     -d&lt;指定目录&gt;</span><br><span class="line"></span><br><span class="line">tar 指令 是打包指令，最后打包后的文件是 .tar.gz 的文件</span><br><span class="line">tar  XXX.tar.gz 打包的内容</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">显示系统执行</span><br><span class="line">ps -ef是以全格式显示当前所有的</span><br><span class="line">ps -ef|grep xxx</span><br><span class="line"></span><br><span class="line">终止进程kill和killa    </span><br><span class="line">kill [选项] 进程号   </span><br><span class="line">（-9 :表示强迫进程立即）</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/15/%E7%AC%AC%E4%BA%8C%E5%A4%A9%EF%BC%9ALinux%E5%91%BD%E4%BB%A4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-第一天：安装博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/24/%E7%AC%AC%E5%8D%81%E5%A4%A9%EF%BC%9A%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/" class="archive-article-date">
-  	<time datetime="2020-02-24T13:15:53.517Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/24/%E7%AC%AC%E5%8D%81%E5%A4%A9%EF%BC%9A%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/">第十天：项目打包</a>
+      <a class="article-title" href="/2020/02/14/%E7%AC%AC%E4%B8%80%E5%A4%A9%EF%BC%9A%E5%AE%89%E8%A3%85%E5%8D%9A%E5%AE%A2/">第一天：安装博客</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/24/ICMS%E7%B3%BB%E7%BB%9F%E4%B8%9A%E5%8A%A1/" class="archive-article-date">
-  	<time datetime="2020-02-24T03:20:12.221Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-24</time>
+        
+        <a href="/2020/02/14/%E7%AC%AC%E4%B8%80%E5%A4%A9%EF%BC%9A%E5%AE%89%E8%A3%85%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+  	<time datetime="2020-02-14T12:18:21.135Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-14</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/24/ICMS%E7%B3%BB%E7%BB%9F%E4%B8%9A%E5%8A%A1/">ICMS系统业务</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">安装hexo博客的步骤地址：</span><br><span class="line"></span><br><span class="line">https:<span class="comment">//www.cnblogs.com/hxun/p/10939665.html</span></span><br><span class="line"></span><br><span class="line">本地启动命令：hexo server</span><br><span class="line"></span><br><span class="line">更新命令：hexo clean ---&gt;  hexo g  ---&gt;  hexo d</span><br><span class="line"></span><br><span class="line">主题命令：git clone https:<span class="comment">//github.com/litten/hexo-theme-yilia.git themes/yilia</span></span><br><span class="line"></span><br><span class="line">本地启动命令：hexo serve</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/14/%E7%AC%AC%E4%B8%80%E5%A4%A9%EF%BC%9A%E5%AE%89%E8%A3%85%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/22/%E7%AC%AC%E4%B9%9D%E5%A4%A9%EF%BC%9Avue/" class="archive-article-date">
-  	<time datetime="2020-02-22T13:55:12.518Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-22</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/22/%E7%AC%AC%E4%B9%9D%E5%A4%A9%EF%BC%9Avue/">第九天：vue</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/21/%E7%AC%AC%E5%85%AB%E5%A4%A9%EF%BC%9A%E9%80%9A%E7%94%A8mapper/" class="archive-article-date">
-  	<time datetime="2020-02-21T13:07:30.680Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/21/%E7%AC%AC%E5%85%AB%E5%A4%A9%EF%BC%9A%E9%80%9A%E7%94%A8mapper/">第八天：通用mapper</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/20/%E7%AC%AC%E4%B8%83%E5%A4%A9%EF%BC%9A%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-02-20T07:46:17.922Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/20/%E7%AC%AC%E4%B8%83%E5%A4%A9%EF%BC%9A%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4/">第七天：项目启动命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/%E7%AC%AC%E5%85%AD%E5%A4%A9%EF%BC%9A%E7%B3%BB%E7%BB%9F%E4%B8%9A%E5%8A%A1/" class="archive-article-date">
-  	<time datetime="2020-02-19T12:23:21.287Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/%E7%AC%AC%E5%85%AD%E5%A4%A9%EF%BC%9A%E7%B3%BB%E7%BB%9F%E4%B8%9A%E5%8A%A1/">第六天：系统业务</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/18/%E7%AC%AC%E4%BA%94%E5%A4%A9%EF%BC%9Adocker/" class="archive-article-date">
-  	<time datetime="2020-02-18T05:56:27.508Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/18/%E7%AC%AC%E4%BA%94%E5%A4%A9%EF%BC%9Adocker/">第五天：docker</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/17/HashMap%E8%A7%A3%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2020-02-17T12:47:15.338Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/HashMap%E8%A7%A3%E6%9E%90/">HashMap解析</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/17/%E7%AC%AC%E5%9B%9B%E5%A4%A9%EF%BC%9Aspring%E6%BA%90%E7%A0%81/" class="archive-article-date">
-  	<time datetime="2020-02-17T12:27:59.040Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/%E7%AC%AC%E5%9B%9B%E5%A4%A9%EF%BC%9Aspring%E6%BA%90%E7%A0%81/">第四天：spring源码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/16/%E7%AC%AC%E4%B8%89%E5%A4%A9%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-02-16T13:20:50.950Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/16/%E7%AC%AC%E4%B8%89%E5%A4%A9%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">第三天：排序算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
-  
-
-    
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/">2</a><a class="extend next" rel="next" href="/archives/2020/page/2/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </nav>
   
 
@@ -461,9 +318,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
