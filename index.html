@@ -152,6 +152,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-第11天：缓存穿透：" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/10/%E7%AC%AC11%E5%A4%A9%EF%BC%9A%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%EF%BC%9A/">第11天：缓存穿透：</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/10/%E7%AC%AC11%E5%A4%A9%EF%BC%9A%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%EF%BC%9A/" class="archive-article-date">
+  	<time datetime="2020-03-10T07:38:23.170Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">缓存穿透：大量缓存区以及数据库都不存在的key</span><br><span class="line"></span><br><span class="line">（解决方案： <span class="number">1</span>采用布隆过滤器<span class="number">2</span>将不存在的值缓存为空 ）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">缓存击穿： 当这个key在缓存区失效的瞬间，持续的大并发就穿破缓存，直接请求数据库 </span><br><span class="line"></span><br><span class="line">（解决方案： 加分布式 锁）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">缓存雪崩： 是指在某一个时间段，缓存Key集中过期失效。</span><br><span class="line"></span><br><span class="line"> （解决方案：设置不同的失效时间）</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">util调用service实例</span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AutoLoginUtil</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> IUserService userService;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> AutoLoginUtil autoLoginUtil;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostConstruct</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        autoLoginUtil = <span class="keyword">this</span>;</span><br><span class="line">        autoLoginUtil.userService = <span class="keyword">this</span>.userService;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">autoLogin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        autoLoginUtil.userService.queryUserAutoLogin();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">OAuth2和shiro</span><br><span class="line">前者主要应用于：OAuth2:允许第三方应用代表用户获得访问的权限。</span><br><span class="line">后者：shiro：执行身份验证、授权、密码和会话管理。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/10/%E7%AC%AC11%E5%A4%A9%EF%BC%9A%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%EF%BC%9A/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-第十天：项目打包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -713,69 +785,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/02/17/%E7%AC%AC%E5%9B%9B%E5%A4%A9%EF%BC%9Aspring%E6%BA%90%E7%A0%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-第三天：排序算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/16/%E7%AC%AC%E4%B8%89%E5%A4%A9%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">第三天：排序算法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/16/%E7%AC%AC%E4%B8%89%E5%A4%A9%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-02-16T13:20:50.950Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">冒泡排序:		</span><br><span class="line">		<span class="comment">//把最大值排到后面</span></span><br><span class="line">		<span class="keyword">int</span>[] arr = &#123;<span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>&#125;; </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr.length-i; j++) &#123;</span><br><span class="line">             <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                  <span class="keyword">int</span> tmp = arr[j];</span><br><span class="line">                  arr[j] = arr[j + <span class="number">1</span>];</span><br><span class="line">                  arr[j + <span class="number">1</span>] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">选择排序:</span><br><span class="line">            <span class="comment">//最小值放到前面</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr1.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; arr1.length; j++) &#123;</span><br><span class="line">              <span class="keyword">if</span> (arr[i] &gt; arr[j]) &#123;</span><br><span class="line">                  <span class="keyword">int</span> tmp = arr[i];</span><br><span class="line">                  arr[i] = arr[j];</span><br><span class="line">                  arr[j] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/16/%E7%AC%AC%E4%B8%89%E5%A4%A9%EF%BC%9A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">展开全文 >></a>
         </p>
       
 
